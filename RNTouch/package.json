@@ -1,0 +1,16 @@
+{
+  "name": "react-lib",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "./buildLibs.sh",
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "bundle": "react-native bundle --platform ios --dev false --entry-file index.js --bundle-output ../SampleApp.iOS/Resources/main.jsbundle"
+  },
+  "author": "Charles Luxton",
+  "license": "MIT",
+  "dependencies": {
+    "react": "16.0.0-beta.5",
+    "react-native": "^0.49.3"
+  }
+}
