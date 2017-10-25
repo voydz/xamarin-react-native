@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>RNTouch</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <AssemblyName>ReactNative</AssemblyName>
+    <AssemblyName>RNTouch</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>

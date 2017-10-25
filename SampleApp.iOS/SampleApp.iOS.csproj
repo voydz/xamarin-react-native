@@ -89,12 +89,12 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
-    <ProjectReference Include="..\ReactNative\ReactNative.csproj">
+    <BundleResource Include="Resources\main.jsbundle" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RNTouch\RNTouch.csproj">
       <Project>{05FF3726-ED02-4814-AF63-9BA10085090E}</Project>
       <Name>RNTouch</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\main.jsbundle" />
   </ItemGroup>
 </Project>
