@@ -20,14 +20,6 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <CustomCommands>
-      <CustomCommands>
-        <Command>
-          <type>BeforeBuild</type>
-          <command>./buildLibs.sh</command>
-        </Command>
-      </CustomCommands>
-    </CustomCommands>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>full</DebugType>
@@ -37,14 +29,6 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <CustomCommands>
-      <CustomCommands>
-        <Command>
-          <type>BeforeBuild</type>
-          <command>./buildLibs.sh</command>
-        </Command>
-      </CustomCommands>
-    </CustomCommands>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
