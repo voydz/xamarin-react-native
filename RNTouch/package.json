@@ -5,7 +5,7 @@
   "scripts": {
     "build": "./buildLibs.sh",
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "bundle": "react-native bundle --platform ios --dev false --entry-file index.js --bundle-output ../SampleApp.iOS/Resources/main.jsbundle"
+    "bundle": "react-native bundle --platform ios --dev false --entry-file index.js --bundle-output ../SampleApp.iOS/Resources/main.jsbundle --assets-dest ../SampleApp.iOS/Resources/"
   },
   "author": "Charles Luxton",
   "license": "MIT",

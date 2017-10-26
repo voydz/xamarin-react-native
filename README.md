@@ -29,13 +29,15 @@ yarn build Debug # or Release respectively (case sensitive), default: Debug
 #### 2. Either use the react packager
 This will only work for debug builds. Run the following command and check that your javascript bundle is available on `http://localhost:8081/index.bundle`
 
+If you deploy to a physical device make sure you update the url inside `SampleApp.iOS/AppDelegate.cs` with your local ip address, so that the device can reach the packager in your local network.
+
 ```bash
 # run react native packager
 yarn start
 ```
 
 #### 2. Or use the embeddable javascript bundle
-This is recommended for release builds. You will need to update the url inside `SampleApp.iOS/AppDelegate.cs` to the bundle asset.
+This is recommended for release builds. You will need to update the javascript source inside `SampleApp.iOS/AppDelegate.cs` to the bundled asset.
 
 ```bash
 # bundle javascript to embeddable main.jsbundle
@@ -80,9 +82,5 @@ yarn start
 Open the react dev support menu and `Refresh` the view or `Enable hot reloading` to check if everything works.
 
 ## Known Issues
-* The iOS sample application only works on a simulator. Physical devices run into an dynamic code generation error.
-    * **No workaround** known, yet.
-
-
 * The Android sample application does not initially load from the react packager. **Or is this the intended behavior?**
     * **Workaround:** Instead you have to `yarn bundle` and include the `index.android.bundle` in the android `Assets/` directory.
