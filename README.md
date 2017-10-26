@@ -12,6 +12,8 @@ This is mainly a proof-of-concept and a challange to make transitioning projects
 #### 1. Getting your hands dirty
 To build the application you will first need to download React Native & build the static library for Xamarin to use.
 
+It is crucial to understand, that since the library is compiled and linked statically you have to ship seperate `*.dlls` for release and debug. For example a release build of `libReactNative.a` won't contain the DevSupport tools. See the commands below on how you can change the build configuration.
+
 After checking out the project run the following commands:
 
 ```bash
@@ -21,7 +23,7 @@ cd ./RNTouch
 yarn install
 
 # build static react native library
-yarn build
+yarn build Debug # or Release respectively (case sensitive), default: Debug
 ```
 
 #### 2. Either use the react packager
@@ -78,10 +80,6 @@ yarn start
 Open the react dev support menu and `Refresh` the view or `Enable hot reloading` to check if everything works.
 
 ## Known Issues
-* The iOS DevSupport tools do not work.
-    * **No workaround** known, yet.
-
-
 * The iOS sample application only works on a simulator. Physical devices run into an dynamic code generation error.
     * **No workaround** known, yet.
 
