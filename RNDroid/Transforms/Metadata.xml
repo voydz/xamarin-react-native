@@ -19,6 +19,9 @@
 	<!--
 	    React
 	-->
+	<!-- BuildConfig -->
+	<!-- auto generated file should really not be distributed -->
+	<remove-node path="/api/package[@name='com.facebook.react']/class[@name='BuildConfig']" />
 	<!-- IAndroidView -->
 	<remove-node path="/api/package[@name='com.facebook.react.flat']/class[@name='RCTTextInput']" />
 	<!-- ForwardingCookieHandler -->

@@ -25,7 +25,7 @@ yarn build
 ```
 
 #### 2. Either use the react packager
-This will only work for debug builds. Run the following ocmmand and check that your javascript bundle is available on `http://localhost:8081/index.bundle`
+This will only work for debug builds. Run the following command and check that your javascript bundle is available on `http://localhost:8081/index.bundle`
 
 ```bash
 # run react native packager
@@ -55,8 +55,6 @@ yarn install
 ```
 
 #### 2. Bundle the embeddable javascript
-Using the react packager is not possible at the moment. See *Known Issues*.
-
 This is recommended for release builds.
 
 ```bash
@@ -67,6 +65,18 @@ yarn bundle
 #### 3. Firing it up
 After you have done this, you can open the project `XamarinReactNative.sln` and deploy it to a device or simulator.
 
+#### (OPTIONAL) 3.1. Use the react packager
+Using the react packager is only possible once the app already started and loaded it's bundle from `Assets/`. See *Known Issues*.
+
+This will only work for debug builds. Run the following command and check that your javascript bundle is available on `http://localhost:8081/index.bundle`
+
+```bash
+# run react native packager
+yarn start
+```
+
+Open the react dev support menu and `Refresh` the view or `Enable hot reloading` to check if everything works.
+
 ## Known Issues
 * The iOS DevSupport tools do not work.
     * **No workaround** known, yet.
@@ -76,5 +86,5 @@ After you have done this, you can open the project `XamarinReactNative.sln` and 
     * **No workaround** known, yet.
 
 
-* The Android sample application does not work with the react packager.
+* The Android sample application does not initially load from the react packager. **Or is this the intended behavior?**
     * **Workaround:** Instead you have to `yarn bundle` and include the `index.android.bundle` in the android `Assets/` directory.
