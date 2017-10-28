@@ -6,7 +6,7 @@
     <ProjectGuid>{093D248C-E7EF-4C74-B1A0-38E0A332E736}</ProjectGuid>
     <ProjectTypeGuids>{10368E6C-D01B-4462-8E8B-01FC667A7035};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
-    <RootNamespace>RNDroid</RootNamespace>
+    <RootNamespace>ReactNative.Droid</RootNamespace>
     <AssemblyName>RNDroid</AssemblyName>
     <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>

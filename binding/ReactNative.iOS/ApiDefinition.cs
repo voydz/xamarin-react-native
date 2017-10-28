@@ -5,7 +5,7 @@ using Foundation;
 using ObjCRuntime;
 using CoreGraphics;
 
-namespace RNTouch
+namespace ReactNative.iOS
 {
     [BaseType(typeof(UIView))]
     interface RCTRootView

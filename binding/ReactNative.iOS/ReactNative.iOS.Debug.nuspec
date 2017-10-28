@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package>
+  <metadata>
+    <id>ReactNative.iOS.Debug</id>
+    <version>1.0.0</version>
+    <authors>voydz</authors>
+    <owners>voydz</owners>
+    <iconUrl>https://reactjs.org/favicon.ico</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Xamarin.iOS binding of react-native. This version has debug tools enabled and should not be used for production builds!</description>
+    <releaseNotes>Initial release.</releaseNotes>
+    <copyright>Copyright 2017</copyright>
+    <tags>react react-native com.facebook.react facebook</tags>
+  </metadata>
+  <files>
+    <file src="bin/Debug/RNTouch.dll" target="lib/Xamarin.iOS10/RNTouch.dll" />
+  </files>
+</package>

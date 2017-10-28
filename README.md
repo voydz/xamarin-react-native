@@ -17,7 +17,7 @@ It is crucial to understand, that since the library is compiled and linked stati
 After checking out the project run the following commands:
 
 ```bash
-cd ./RNTouch
+cd ./binding/ReactNative.iOS
 
 # install all node dependencies
 yarn install
@@ -37,7 +37,7 @@ yarn start
 ```
 
 #### 2. Or use the embeddable javascript bundle
-This is recommended for release builds. You will need to update the javascript source inside `SampleApp.iOS/AppDelegate.cs` to the bundled asset.
+This is recommended for release builds. You will need to update the javascript source inside `samples/SampleApp.iOS/AppDelegate.cs` to the bundled asset.
 
 ```bash
 # bundle javascript to embeddable main.jsbundle
@@ -45,14 +45,14 @@ yarn bundle
 ```
 
 #### 3. Firing it up
-After you have done this, you can open the project `XamarinReactNative.sln` and deploy it to a device or simulator.
+After you have done this, you can open the project `samples/SampleApp.sln` and deploy it to a device or simulator.
 
 ### Android
 #### 1. Getting your hands dirty
 After checking out the project run the following commands:
 
 ```bash
-cd ./RNDroid
+cd ./binding/ReactNative.Droid
 
 # install all node dependencies
 yarn install

@@ -2,5 +2,5 @@
 /**/bin
 /**/obj
 packages
-RNTouch/libReactNative.a
+libReactNative.a
 *.userprefs

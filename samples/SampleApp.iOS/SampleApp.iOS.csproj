@@ -92,9 +92,9 @@
     <BundleResource Include="Resources\main.jsbundle" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\RNTouch\RNTouch.csproj">
+    <ProjectReference Include="..\..\binding\ReactNative.iOS\ReactNative.iOS.csproj">
       <Project>{05FF3726-ED02-4814-AF63-9BA10085090E}</Project>
-      <Name>RNTouch</Name>
+      <Name>ReactNative.iOS</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>
