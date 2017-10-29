@@ -2,12 +2,28 @@
 This project is inspired and based on https://github.com/cluxton/xamarin-react-native. Credits to him, for his good work! :+1:
 
 #### Whats in the box?
-This example includes a working proof-of-concept for both *Xamarin.Android* and *Xamarin.iOS*.
+This example includes a working proof-of-concept for both *Xamarin.Android* and *Xamarin.iOS*. Also there are renderers for *Xamarin.Forms*.
 
 #### So, why would you do that?
 This is mainly a proof-of-concept and a challange to make transitioning projects from Xamarin to react-native a lot easier.
 
-## Getting started
+## Integrate in your project
+To get startet just install the NuGet packages you need for your project. It depends on which project type you are dealing with.
+
+#### Xamarin.iOS and Xamarin.Droid
+* Xamarin.Droid - https://www.nuget.org/packages/ReactNative.Droid/
+* Xamarin.iOS - https://www.nuget.org/packages/ReactNative.iOS/
+* Xamarin.iOS for Debugging (see notes in 1. Getting your hands dirty) https://www.nuget.org/packages/ReactNative.iOS.Debug/
+
+#### Xamarin.Forms
+* Xamarin.Forms.Droid - https://www.nuget.org/packages/ReactNative.Forms.Droid/
+* Xamarin.Forms.iOS - https://www.nuget.org/packages/ReactNative.Forms.iOS/
+
+(you can and should use the `ReactNative.iOS.Debug` package in exchange for `ReactNative.iOS` for debugging purposes)
+
+
+
+## Build the samples and sources
 ### iOS
 #### 1. Getting your hands dirty
 To build the application you will first need to download React Native & build the static library for Xamarin to use.
@@ -67,7 +83,7 @@ yarn bundle
 ```
 
 #### 3. Firing it up
-After you have done this, you can open the project `XamarinReactNative.sln` and deploy it to a device or simulator.
+After you have done this, you can open the project `samples/SampleApp.sln` and deploy it to a device or simulator.
 
 #### (OPTIONAL) 3.1. Use the react packager
 Using the react packager is only possible once the app already started and loaded it's bundle from `Assets/`. See *Known Issues*.
