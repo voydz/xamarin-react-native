@@ -1,6 +1,6 @@
 ﻿using Foundation;
 using UIKit;
-using RNTouch;
+using ReactNative.iOS;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -27,8 +27,8 @@ namespace SampleApp.iOS
             var props = new NSDictionary();
             var options = new NSDictionary();
 
-            var url = NSBundle.MainBundle.GetUrlForResource("main", "jsbundle");
-            //var url = NSUrl.FromString("http://localhost:8081/index.bundle?platform=ios");
+            //var url = NSBundle.MainBundle.GetUrlForResource("main", "jsbundle");
+            var url = NSUrl.FromString("http://localhost:8081/index.bundle?platform=ios");
 
             RCTRootView rootView = new RCTRootView(url, new NSString("MyReactNativeApp"), props, options);
             var vc = new UIViewController();

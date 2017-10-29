@@ -1,9 +1,9 @@
 all: build
 
 build:
-	$(MAKE) -C binding/ReactNative.Droid
-	$(MAKE) -C binding/ReactNative.iOS
+	$(MAKE) -C binding
+	$(MAKE) -C forms
 
 clean:
-	$(MAKE) clean -C binding/ReactNative.Droid
-	$(MAKE) clean -C binding/ReactNative.iOS
+	$(MAKE) clean -C binding
+	$(MAKE) clean -C forms

@@ -7,7 +7,6 @@ DBG_NUSPEC=ReactNative.iOS.Debug.nuspec
 all: nuget
 
 build:
-	echo $(CONFIGURATION)
 	./buildLibs.sh $(CONFIGURATION)
 	$(MSBUILD) $(SOLUTION) /t:Restore
 	$(MSBUILD) $(SOLUTION) /p:Configuration=$(CONFIGURATION) /t:Clean /t:Build

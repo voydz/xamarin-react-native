@@ -5,9 +5,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleApp.iOS", "SampleApp.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleApp.Droid", "SampleApp.Droid\SampleApp.Droid.csproj", "{72D1B391-859D-4927-92E5-E911A1887036}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RNDroid", "..\binding\RNDroid\RNDroid.csproj", "{093D248C-E7EF-4C74-B1A0-38E0A332E736}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReactNative.Droid", "..\binding\ReactNative.Droid\ReactNative.Droid.csproj", "{093D248C-E7EF-4C74-B1A0-38E0A332E736}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RNTouch", "..\binding\RNTouch\RNTouch.csproj", "{05FF3726-ED02-4814-AF63-9BA10085090E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReactNative.iOS", "..\binding\ReactNative.iOS\ReactNative.iOS.csproj", "{05FF3726-ED02-4814-AF63-9BA10085090E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

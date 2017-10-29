@@ -1,0 +1,47 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReactNative.Forms", "ReactNative.Forms\ReactNative.Forms.csproj", "{370CC3E0-D956-4784-A374-F80B0E536C31}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReactNative.Forms.iOS", "ReactNative.Forms.iOS\ReactNative.Forms.iOS.csproj", "{CE1F91F2-1D49-4C92-9AF1-284639C2BBE7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReactNative.Forms.Droid", "ReactNative.Forms.Droid\ReactNative.Forms.Droid.csproj", "{5557067B-04CE-407A-8E1E-DC5FBBB781B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReactNative.Droid", "..\binding\ReactNative.Droid\ReactNative.Droid.csproj", "{093D248C-E7EF-4C74-B1A0-38E0A332E736}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReactNative.iOS", "..\binding\ReactNative.iOS\ReactNative.iOS.csproj", "{05FF3726-ED02-4814-AF63-9BA10085090E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Binding", "Binding", "{2EAEC814-EA58-4732-BB79-5046A3A6D2C3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{370CC3E0-D956-4784-A374-F80B0E536C31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{370CC3E0-D956-4784-A374-F80B0E536C31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{370CC3E0-D956-4784-A374-F80B0E536C31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{370CC3E0-D956-4784-A374-F80B0E536C31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CE1F91F2-1D49-4C92-9AF1-284639C2BBE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE1F91F2-1D49-4C92-9AF1-284639C2BBE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE1F91F2-1D49-4C92-9AF1-284639C2BBE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE1F91F2-1D49-4C92-9AF1-284639C2BBE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5557067B-04CE-407A-8E1E-DC5FBBB781B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5557067B-04CE-407A-8E1E-DC5FBBB781B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5557067B-04CE-407A-8E1E-DC5FBBB781B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5557067B-04CE-407A-8E1E-DC5FBBB781B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{093D248C-E7EF-4C74-B1A0-38E0A332E736}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{093D248C-E7EF-4C74-B1A0-38E0A332E736}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{093D248C-E7EF-4C74-B1A0-38E0A332E736}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{093D248C-E7EF-4C74-B1A0-38E0A332E736}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05FF3726-ED02-4814-AF63-9BA10085090E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05FF3726-ED02-4814-AF63-9BA10085090E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05FF3726-ED02-4814-AF63-9BA10085090E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05FF3726-ED02-4814-AF63-9BA10085090E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{093D248C-E7EF-4C74-B1A0-38E0A332E736} = {2EAEC814-EA58-4732-BB79-5046A3A6D2C3}
+		{05FF3726-ED02-4814-AF63-9BA10085090E} = {2EAEC814-EA58-4732-BB79-5046A3A6D2C3}
+	EndGlobalSection
+EndGlobal

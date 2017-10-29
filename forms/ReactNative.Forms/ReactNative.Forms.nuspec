@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package>
+  <metadata>
+    <id>ReactNative.Forms</id>
+    <version>1.0.0</version>
+    <authors>voydz</authors>
+    <owners>voydz</owners>
+    <iconUrl>https://reactjs.org/favicon.ico</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Use ReactNative.iOS inside of Xamarin.Forms.</description>
+    <releaseNotes>Initial release.</releaseNotes>
+    <copyright>Copyright 2017</copyright>
+    <tags>react react-native com.facebook.react facebook</tags>
+    <dependencies>
+      <dependency id="Xamarin.Forms" version="2.4.0.282" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="bin/Release/netstandard2.0/ReactNative.Forms.dll" target="lib/netstandard2.0" />
+    <file src="bin/Release/netstandard2.0/ReactNative.Forms.dll" target="lib/Xamarin.iOS10" />
+    <file src="bin/Release/netstandard2.0/ReactNative.Forms.dll" target="lib/MonoAndroid10" />
+  </files>
+</package>
