@@ -41,6 +41,15 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Mono.Android" />
+    <Reference Include="Square.OkHttp.UrlConnection">
+      <HintPath>..\packages\Square.OkHttp.UrlConnection.2.7.5.0\lib\MonoAndroid\Square.OkHttp.UrlConnection.dll</HintPath>
+    </Reference>
+    <Reference Include="Square.OkHttp">
+      <HintPath>..\packages\OkHttpClient.2.7.5\lib\monoandroid\Square.OkHttp.dll</HintPath>
+    </Reference>
+    <Reference Include="Square.OkIO">
+      <HintPath>..\packages\Square.OkIO.1.13.0\lib\MonoAndroid\Square.OkIO.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -50,6 +59,7 @@
   <ItemGroup>
     <None Include="Additions\AboutAdditions.txt" />
     <None Include="Jars\AboutJars.txt" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <TransformFile Include="Transforms\EnumFields.xml" />
@@ -68,9 +78,6 @@
     <EmbeddedJar Include="Jars\fbcore-1.5.0.jar" />
     <EmbeddedJar Include="Jars\fresco-1.5.0.jar" />
     <EmbeddedJar Include="Jars\drawee-1.5.0.jar" />
-    <EmbeddedJar Include="Jars\okhttp-3.9.0.jar" />
-    <EmbeddedJar Include="Jars\okio-1.13.0.jar" />
-    <EmbeddedJar Include="Jars\okhttp-urlconnection-3.9.0.jar" />
     <EmbeddedJar Include="Jars\imagepipeline-base-1.5.0.jar" />
     <EmbeddedJar Include="Jars\imagepipeline-okhttp3-1.5.0.jar" />
     <EmbeddedJar Include="Jars\imagepipeline-1.5.0.jar" />
