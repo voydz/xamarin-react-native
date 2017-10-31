@@ -21,7 +21,7 @@ To get startet just install the NuGet packages you need for your project. It dep
 
 (you can and should use the `ReactNative.iOS.Debug` package in exchange for `ReactNative.iOS` for debugging purposes)
 
-## A word about linking react-native compoents
+## A word about linking react-native components
 There are a lot of react-native components which need [native linking](https://facebook.github.io/react-native/docs/linking-libraries-ios.html). This binding already contains a precompiled and linked version of react-native. In theroy every component which need native linking should work if bound to C# seperatly. Make sure it is referencing this base react-native binding.
 
 ## Build the samples and sources
