@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>ReactNative.Droid</id>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
     <authors>voydz</authors>
     <owners>voydz</owners>
     <iconUrl>https://reactjs.org/favicon.ico</iconUrl>
@@ -12,14 +12,12 @@
     <copyright>Copyright 2017</copyright>
     <tags>react react-native com.facebook.react facebook</tags>
     <dependencies>
-      <dependency id="Square.OkHttp" version="2.7.5.0"/>
-      <dependency id="Square.OkHttp.UrlConnection" version="2.7.5.0"/>
       <dependency id="Square.OkIO" version="1.13.0"/>
       <dependency id="Xamarin.Android.Support.v4" version="*"/>
       <dependency id="Xamarin.Android.Support.v7.AppCompat" version="*"/>
     </dependencies>
   </metadata>
   <files>
-    <file src="bin/Release/RNDroid.dll" target="lib/MonoAndroid10/RNDroid.dll" />
+    <file src="bin/Release/ReactNative.Droid.dll" target="lib/MonoAndroid10" />
   </files>
 </package>

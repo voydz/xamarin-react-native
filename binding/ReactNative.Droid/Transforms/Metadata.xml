@@ -2,8 +2,11 @@
 <metadata>
 	<!-- Remove 3rd parties from binding -->
 	<remove-node path="/api/package[@name='javax.inject']" />
+	<remove-node path="/api/package[contains(@name, 'javax.annotation')]" />
+	<!-- Bolts -->
+	<remove-node path="/api/package[@name='bolts']" />
 	<!-- Okio -->
-	<remove-node path="/api/package[@name='okio']" />
+	<!-- <remove-node path="/api/package[@name='okio']" /> -->
 	<remove-node path="/api/package[contains(@name, 'okhttp3')]" />
 	<!-- Fresco Core -->
 	<remove-node path="/api/package[@name='com.facebook.common.executors']/interface[@name='HandlerExecutorService']" />

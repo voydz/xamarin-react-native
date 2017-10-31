@@ -21,14 +21,15 @@ To get startet just install the NuGet packages you need for your project. It dep
 
 (you can and should use the `ReactNative.iOS.Debug` package in exchange for `ReactNative.iOS` for debugging purposes)
 
-
+## A word about linking react-native compoents
+There are a lot of react-native components which need [native linking](https://facebook.github.io/react-native/docs/linking-libraries-ios.html). This binding already contains a precompiled and linked version of react-native. In theroy every component which need native linking should work if bound to C# seperatly. Make sure it is referencing this base react-native binding.
 
 ## Build the samples and sources
 ### iOS
 #### 1. Getting your hands dirty
 To build the application you will first need to download React Native & build the static library for Xamarin to use.
 
-It is crucial to understand, that since the library is compiled and linked statically you have to ship seperate `*.dlls` for release and debug. For example a release build of `libReactNative.a` won't contain the DevSupport tools. See the commands below on how you can change the build configuration.
+It is crucial to understand, that since the library is compiled and linked statically you have to ship seperate `*.dlls` for release and debug. For example a release build of `libReactNative.a` won't contain the [DevSupport](https://facebook.github.io/react-native/docs/debugging.html) tools. See the commands below on how you can change the build configuration.
 
 After checking out the project run the following commands:
 
@@ -98,5 +99,8 @@ yarn start
 Open the react dev support menu and `Refresh` the view or `Enable hot reloading` to check if everything works.
 
 ## Known Issues
+* The Android Xamarin.Forms implementation does not work right now. It complains over an overwritten view id.
+* The precompiled `ReactNative.Droid` assembly references the `Square.Okio` package. This will cause build errors in the DEXer build step if you are using `modernhttpclient`. This is because `modernhttpclient` ships with its own prebundled version of `okhttp`.
+    * **Workaround:** You have to compile `ReactNative.Droid` by yourself and remove the duplicated native references. Alternatively you can use a fork of `modernhttpclient` which does not embed its own version of `okhttp`.
 * The Android sample application does not initially load from the react packager. **Or is this the intended behavior?**
     * **Workaround:** Instead you have to `yarn bundle` and include the `index.android.bundle` in the android `Assets/` directory.

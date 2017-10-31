@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>ReactNative.iOS.Debug</id>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <authors>voydz</authors>
     <owners>voydz</owners>
     <iconUrl>https://reactjs.org/favicon.ico</iconUrl>
@@ -13,6 +13,6 @@
     <tags>react react-native com.facebook.react facebook</tags>
   </metadata>
   <files>
-    <file src="bin/Debug/RNTouch.dll" target="lib/Xamarin.iOS10/RNTouch.dll" />
+    <file src="bin/Debug/ReactNative.iOS.dll" target="lib/Xamarin.iOS10" />
   </files>
 </package>

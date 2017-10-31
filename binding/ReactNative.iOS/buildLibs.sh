@@ -15,51 +15,42 @@ function buildLib {
     HEADER_IPHONE=""
   fi
 
-  # display some resolved vars
-  echo $PROJECT
-  echo $HEADER_SIMULATOR
-  echo $HEADER_IPHONE
-
-  rm -Rf "$PROJECT/**/*.a"
-  cd $PROJECT
-
   # build xcode
   xcodebuild \
-    -project "$2.xcodeproj" \
+    -project "$PROJECT/$2.xcodeproj" \
     -target $2 \
     -sdk iphonesimulator \
     -arch i386 \
     -configuration $3 clean build \
     $HEADER_SIMULATOR
   xcodebuild \
-    -project "$2.xcodeproj" \
+    -project "$PROJECT/$2.xcodeproj" \
     -target $2 \
     -sdk iphonesimulator \
     -arch x86_64 \
     -configuration $3 clean build \
-    TARGET_BUILD_DIR='./build-x86_64' \
-    BUILT_PRODUCTS_DIR='./build-x86_64' \
+    TARGET_BUILD_DIR="$PROJECT/build-x86_64" \
+    BUILT_PRODUCTS_DIR="$PROJECT/build-x86_64" \
     $HEADER_SIMULATOR
   xcodebuild \
-    -project "$2.xcodeproj" \
+    -project "$PROJECT/$2.xcodeproj" \
     -target $2 \
     -sdk iphoneos \
     -arch armv7 \
     -configuration $3 clean build \
     $HEADER_IPHONE
   xcodebuild \
-    -project "$2.xcodeproj" \
+    -project "$PROJECT/$2.xcodeproj" \
     -target $2 \
     -sdk iphoneos \
     -arch arm64 \
     -configuration $3 clean build \
-    TARGET_BUILD_DIR='./build-arm64' \
-    BUILT_PRODUCTS_DIR='./build-arm64' \
+    TARGET_BUILD_DIR="$PROJECT/build-arm64" \
+    BUILT_PRODUCTS_DIR="$PROJECT/build-arm64" \
     $HEADER_IPHONE
 
   # link archs together
-  cd $DIR
-  lipo -create -output "$DIR/bin/react/lib$2.a" \
+  lipo -create -output "$DIR/bin/react/$3/lib$2.a" \
     "$PROJECT/build/$3-iphoneos/lib$2.a" \
     "$PROJECT/build-arm64/lib$2.a" \
     "$PROJECT/build/$3-iphonesimulator/lib$2.a" \
@@ -67,20 +58,19 @@ function buildLib {
 }
 
 # clean .a directory
-rm -Rf "$DIR/bin/react/"
-mkdir "$DIR/bin/react/"
+rm -Rf "$DIR/bin/react/$CONFIGURATION/"
+mkdir "$DIR/bin/react/$CONFIGURATION/"
 
 # actually build the react submodules
-buildLib React React $CONFIGURATION
-buildLib Libraries/Text RCTText $CONFIGURATION React
-buildLib Libraries/Network RCTNetwork $CONFIGURATION React
-buildLib Libraries/WebSocket RCTWebSocket $CONFIGURATION React # needed for debugging
+buildLib React React "$CONFIGURATION"
+buildLib Libraries/Text RCTText "$CONFIGURATION" React
+buildLib Libraries/Network RCTNetwork "$CONFIGURATION" React
+buildLib Libraries/WebSocket RCTWebSocket "$CONFIGURATION" React # needed for debugging
 
 # link everything together
-cd $DIR
 rm -f "$DIR/libReactNative.a"
-libtool -static -o libReactNative.a \
-  "$DIR/bin/react/libReact.a" \
-  "$DIR/bin/react/libRCTText.a" \
-  "$DIR/bin/react/libRCTNetwork.a" \
-  "$DIR/bin/react/libRCTWebSocket.a"
+libtool -static -o "$DIR/libReactNative.a" \
+  "$DIR/bin/react/$CONFIGURATION/libReact.a" \
+  "$DIR/bin/react/$CONFIGURATION/libRCTText.a" \
+  "$DIR/bin/react/$CONFIGURATION/libRCTNetwork.a" \
+  "$DIR/bin/react/$CONFIGURATION/libRCTWebSocket.a"
