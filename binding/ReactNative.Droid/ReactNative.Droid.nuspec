@@ -6,6 +6,7 @@
     <authors>voydz</authors>
     <owners>voydz</owners>
     <iconUrl>https://reactjs.org/favicon.ico</iconUrl>
+    <projectUrl>https://github.com/voydz/xamarin-react-native</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Xamarin.Droid binding of react-native.</description>
     <releaseNotes>Initial release.</releaseNotes>

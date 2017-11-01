@@ -6,6 +6,7 @@
     <authors>voydz</authors>
     <owners>voydz</owners>
     <iconUrl>https://reactjs.org/favicon.ico</iconUrl>
+    <projectUrl>https://github.com/voydz/xamarin-react-native</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Use ReactNative.iOS inside of Xamarin.Forms.</description>
     <releaseNotes>Initial release.</releaseNotes>
