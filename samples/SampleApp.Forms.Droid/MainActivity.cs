@@ -32,6 +32,11 @@ namespace SampleApp.Forms.Droid
             LoadApplication(new App());
         }
 
+        protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
+        {
+            ReactNative.Forms.Droid.Renderers.ReactViewRenderer.OnPermissionResult(requestCode, (int)resultCode, data);
+        }
+
         public override void OnBackPressed()
         {
             base.OnBackPressed();

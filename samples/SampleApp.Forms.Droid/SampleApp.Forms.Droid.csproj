@@ -113,6 +113,9 @@
     <Reference Include="ReactNative.Forms.Droid">
       <HintPath>references\ReactNative.Forms.Droid.dll</HintPath>
     </Reference>
+    <Reference Include="Square.OkIO">
+      <HintPath>..\packages\Square.OkIO.1.13.0\lib\MonoAndroid\Square.OkIO.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />

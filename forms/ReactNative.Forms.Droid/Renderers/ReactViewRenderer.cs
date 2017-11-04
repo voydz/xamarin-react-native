@@ -13,11 +13,12 @@ using Android.Net;
 using Com.Facebook.React.Modules.Core;
 using Android.Views;
 using System.Collections.Generic;
+using Com.Facebook.React.Bridge;
 
 [assembly: ExportRenderer(typeof(ReactView), typeof(ReactViewRenderer))]
 namespace ReactNative.Forms.Droid.Renderers
 {
-    public class ReactViewRenderer : ViewRenderer<ReactView, ReactRootView>, IDefaultHardwareBackBtnHandler
+    public class ReactViewRenderer : ViewRenderer<ReactView, ReactRootView>, IDefaultHardwareBackBtnHandler, ReactInstanceManager.IReactInstanceEventListener
     {
         private const int OVERLAY_PERMISSION_REQ_CODE = 1945;
 
@@ -64,6 +65,21 @@ namespace ReactNative.Forms.Droid.Renderers
                 {
                     var intent = new Intent(Settings.ActionManageOverlayPermission, Uri.Parse("package:" + activity.PackageName));
                     activity.StartActivityForResult(intent, OVERLAY_PERMISSION_REQ_CODE);
+                }
+            }
+        }
+
+        public static void OnPermissionResult(int requestCode, int resultCode, Intent data)
+        {
+            if (requestCode == OVERLAY_PERMISSION_REQ_CODE)
+            {
+                if (Build.VERSION.SdkInt >= BuildVersionCodes.M)
+                {
+                    if (Settings.CanDrawOverlays(_activity))
+                    {
+                        // Success, now create the view if we have an instance.
+                        _instance?.CreateReactView();
+                    }
                 }
             }
         }
@@ -123,8 +139,8 @@ namespace ReactNative.Forms.Droid.Renderers
 
             if (Control == null)
             {
+                // View is added upon react context was initialized.
                 CreateReactView();
-                SetNativeControl(_rootView);
             }
         }
 
@@ -132,15 +148,36 @@ namespace ReactNative.Forms.Droid.Renderers
         {
             base.OnElementPropertyChanged(sender, e);
 
-            Destroy();
+            switch (e.PropertyName)
+            {
+                case nameof(ReactView.PackagerUrl):
+                case nameof(ReactView.BundleName):
+                case nameof(ReactView.ModulePath):
+                case nameof(ReactView.ModuleName):
+                case nameof(ReactView.Properties):
 
-            // We have to force recreate the whole view.
-            CreateReactView();
-            SetNativeControl(_rootView);
+                    // Kill everything.
+                    _instanceManager.DetachRootView(_rootView);
+                    _instanceManager.Destroy();
+
+                    _instanceManager = null;
+                    _rootView = null;
+
+                    // Recreate view.
+                    CreateReactView();
+                    break;
+            }
         }
 
         private void CreateReactView()
         {
+            if (_debugMode && !Settings.CanDrawOverlays(_activity))
+            {
+                // Debug mode without overlay permissions not supported.
+                System.Console.WriteLine("[ReactNative.Forms] Debug mode without overlay permissions not supported.");
+                return;
+            }
+
             _rootView = new ReactRootView(Context);
             _instanceManager = ReactInstanceManager.Builder()
                 .SetApplication(_application)
@@ -151,6 +188,8 @@ namespace ReactNative.Forms.Droid.Renderers
                 .SetInitialLifecycleState(LifecycleState.Resumed)
                 .Build();
 
+            _instanceManager.AddReactInstanceEventListener(this);
+
             // convert dictionary to bundle
             var props = new Bundle();
             foreach (KeyValuePair<string, object> entry in Element.Properties)
@@ -159,6 +198,15 @@ namespace ReactNative.Forms.Droid.Renderers
             }
 
             _rootView.StartReactApplication(_instanceManager, Element.ModuleName, props);
+        }
+
+        public void OnReactContextInitialized(ReactContext p0)
+        {
+            // Adding the view here will ensure it already
+            // has a view id managed by react native.
+            // Forms will take on this id and does not generate
+            // a new one upon adding without an id.
+            SetNativeControl(_rootView);
         }
 
         #endregion

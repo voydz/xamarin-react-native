@@ -99,7 +99,6 @@ yarn start
 Open the react dev support menu and `Refresh` the view or `Enable hot reloading` to check if everything works.
 
 ## Known Issues
-* The Android Xamarin.Forms implementation does not work right now. It complains over an overwritten view id.
 * The precompiled `ReactNative.Droid` assembly references the `Square.Okio` package. This will cause build errors in the DEXer build step if you are using `modernhttpclient`. This is because `modernhttpclient` ships with its own prebundled version of `okhttp`.
     * **Workaround:** You have to compile `ReactNative.Droid` by yourself and remove the duplicated native references. Alternatively you can use a fork of `modernhttpclient` which does not embed its own version of `okhttp`.
 * The Android sample application does not initially load from the react packager. **Or is this the intended behavior?**
