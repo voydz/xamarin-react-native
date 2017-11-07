@@ -84,6 +84,9 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Renderers\ReactViewRenderer.cs" />
+    <Compile Include="RendererManager.cs" />
+    <Compile Include="ReactFormsAppCompatActivity.cs" />
+    <Compile Include="ReactFormsApplicationActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

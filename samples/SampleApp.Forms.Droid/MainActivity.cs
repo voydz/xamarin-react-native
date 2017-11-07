@@ -1,68 +1,32 @@
-﻿using System;
-
-using Android.App;
-using Android.Content;
+﻿using Android.App;
 using Android.Content.PM;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using Android.OS;
 
 namespace SampleApp.Forms.Droid
 {
     [Activity(Label = "SampleApp.Forms.Droid", Icon = "@drawable/icon", Theme = "@style/MyTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
-    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
+    public class MainActivity : global::ReactNative.Forms.Droid.ReactFormsAppCompatActivity
     {
-        protected override void OnCreate(Bundle bundle)
+        protected override void OnCreate(Bundle savedInstanceState)
         {
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 
-            base.OnCreate(bundle);
+            base.OnCreate(savedInstanceState);
 
-            global::Xamarin.Forms.Forms.Init(this, bundle);
-
-#if DEBUG
-            var debug = true;
-#else
-            var debug = false;
-#endif
-            ReactNative.Forms.Droid.Renderers.ReactViewRenderer.Init(this, debug);
+            global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
 
             LoadApplication(new App());
         }
 
-        protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
+        protected override bool IsReactNativeDebugging()
         {
-            ReactNative.Forms.Droid.Renderers.ReactViewRenderer.OnPermissionResult(requestCode, (int)resultCode, data);
-        }
+#if DEBUG
+            return true;
+#else
+            return false;
+#endif
 
-        public override void OnBackPressed()
-        {
-            base.OnBackPressed();
-
-            ReactNative.Forms.Droid.Renderers.ReactViewRenderer.Instance.BackPressed();
-        }
-
-        protected override void OnResume()
-        {
-            base.OnResume();
-
-            ReactNative.Forms.Droid.Renderers.ReactViewRenderer.Instance.Resume();
-        }
-
-        protected override void OnPause()
-        {
-            base.OnPause();
-
-            ReactNative.Forms.Droid.Renderers.ReactViewRenderer.Instance.Pause();
-        }
-
-        protected override void OnDestroy()
-        {
-            base.OnDestroy();
-
-            ReactNative.Forms.Droid.Renderers.ReactViewRenderer.Instance.Destroy();
         }
     }
 }

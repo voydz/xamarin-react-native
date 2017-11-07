@@ -8,30 +8,17 @@ using Com.Facebook.React.Common;
 using System.ComponentModel;
 using Android.OS;
 using Android.Provider;
-using Android.Content;
-using Android.Net;
 using Com.Facebook.React.Modules.Core;
 using Android.Views;
 using System.Collections.Generic;
 using Com.Facebook.React.Bridge;
+using Android.App;
 
 [assembly: ExportRenderer(typeof(ReactView), typeof(ReactViewRenderer))]
 namespace ReactNative.Forms.Droid.Renderers
 {
-    public class ReactViewRenderer : ViewRenderer<ReactView, ReactRootView>, IDefaultHardwareBackBtnHandler, ReactInstanceManager.IReactInstanceEventListener
+    public class ReactViewRenderer : ViewRenderer<ReactView, ReactRootView>, ReactInstanceManager.IReactInstanceEventListener
     {
-        private const int OVERLAY_PERMISSION_REQ_CODE = 1945;
-
-        #region static fields
-
-        private static Android.App.Application _application;
-
-        private static Android.App.Activity _activity;
-
-        private static bool _debugMode;
-
-        #endregion
-
         #region fields
 
         private ReactRootView _rootView;
@@ -40,93 +27,59 @@ namespace ReactNative.Forms.Droid.Renderers
 
         #endregion
 
-        #region singleton
-
-        private static ReactViewRenderer _instance;
-
-        public static ReactViewRenderer Instance => _instance;
-
-        #endregion
-
         public ReactViewRenderer()
         {
-            _instance = this;
+            RendererManager.Register(this);
         }
 
-        public static void Init(Android.App.Activity activity, bool debugMode)
+        protected override void Dispose(bool disposing)
         {
-            _debugMode = debugMode;
-            _activity = activity;
-            _application = activity.Application;
-
-            if (_debugMode && Build.VERSION.SdkInt >= BuildVersionCodes.M)
+            if (disposing)
             {
-                if (!Settings.CanDrawOverlays(activity))
-                {
-                    var intent = new Intent(Settings.ActionManageOverlayPermission, Uri.Parse("package:" + activity.PackageName));
-                    activity.StartActivityForResult(intent, OVERLAY_PERMISSION_REQ_CODE);
-                }
+                RendererManager.Unregister(this);
             }
+
+            base.Dispose(disposing);
         }
 
-        public static void OnPermissionResult(int requestCode, int resultCode, Intent data)
+        #region internal api
+
+        internal void RerenderReactView()
         {
-            if (requestCode == OVERLAY_PERMISSION_REQ_CODE)
+            CreateReactView();
+        }
+
+        internal void Resume(IDefaultHardwareBackBtnHandler handler)
+        {
+            _instanceManager?.OnHostResume(RendererManager.Activity, handler);
+        }
+
+        internal void Pause()
+        {
+            _instanceManager?.OnHostPause(RendererManager.Activity);
+        }
+
+        internal void Destroy()
+        {
+            _instanceManager?.OnHostDestroy(RendererManager.Activity);
+        }
+
+        internal bool BackPressed()
+        {
+            if (_instanceManager == null)
             {
-                if (Build.VERSION.SdkInt >= BuildVersionCodes.M)
-                {
-                    if (Settings.CanDrawOverlays(_activity))
-                    {
-                        // Success, now create the view if we have an instance.
-                        _instance?.CreateReactView();
-                    }
-                }
+                return false;
             }
-        }
-
-        #region android control api
-
-        public void Pause()
-        {
-            _instanceManager?.OnHostPause(_activity);
-        }
-
-        public void Resume()
-        {
-            _instanceManager?.OnHostResume(_activity, this);
-        }
-
-        public void Destroy()
-        {
-            _instanceManager?.OnHostDestroy(_activity);
-        }
-
-        public void BackPressed()
-        {
-            if (_instanceManager != null)
+            else
             {
                 _instanceManager.OnBackPressed();
-            }
-            //else
-            //{
-            //    base.OnBackPressed();
-            //}
-        }
-
-        public void InvokeDefaultOnBackPressed()
-        {
-            _activity.OnBackPressed();
-        }
-
-        public bool KeyUp(Keycode keyCode, KeyEvent e)
-        {
-            if (keyCode == Keycode.Menu && _instanceManager != null)
-            {
-                _instanceManager.ShowDevOptionsDialog();
                 return true;
             }
+        }
 
-            return base.OnKeyUp(keyCode, e);
+        internal void ShowDevOptionsDialog()
+        {
+            _instanceManager?.ShowDevOptionsDialog();
         }
 
         #endregion
@@ -171,7 +124,7 @@ namespace ReactNative.Forms.Droid.Renderers
 
         private void CreateReactView()
         {
-            if (_debugMode && !Settings.CanDrawOverlays(_activity))
+            if (RendererManager.Debug && !Settings.CanDrawOverlays(RendererManager.Activity))
             {
                 // Debug mode without overlay permissions not supported.
                 System.Console.WriteLine("[ReactNative.Forms] Debug mode without overlay permissions not supported.");
@@ -180,11 +133,11 @@ namespace ReactNative.Forms.Droid.Renderers
 
             _rootView = new ReactRootView(Context);
             _instanceManager = ReactInstanceManager.Builder()
-                .SetApplication(_application)
+                .SetApplication(RendererManager.Activity.Application)
                 .SetBundleAssetName(Element.BundleName)
                 .SetJSMainModulePath(Element.ModulePath)
                 .AddPackage(new MainReactPackage())
-                .SetUseDeveloperSupport(_debugMode)
+                .SetUseDeveloperSupport(RendererManager.Debug)
                 .SetInitialLifecycleState(LifecycleState.Resumed)
                 .Build();
 
