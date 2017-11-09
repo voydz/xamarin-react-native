@@ -26,7 +26,6 @@ namespace SampleApp.Forms.Droid
 #else
             return false;
 #endif
-
         }
     }
 }

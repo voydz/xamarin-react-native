@@ -8,7 +8,7 @@ This example includes a working proof-of-concept for both *Xamarin.Android* and 
 This is mainly a proof-of-concept and a challange to make transitioning projects from Xamarin to react-native a lot easier.
 
 ## Integrate in your project
-To get startet just install the NuGet packages you need for your project. It depends on which project type you are dealing with.
+To get startet just install the NuGet packages you need for your project. It depends on which project type you are dealing with. The version of the NuGet package indicates in which version of react-native is targeted. For example the version `1.0.**50**` targets react-native `^0.50.0`.
 
 #### Xamarin.iOS and Xamarin.Droid
 * Xamarin.Droid - https://www.nuget.org/packages/ReactNative.Droid/
@@ -34,13 +34,12 @@ It is crucial to understand, that since the library is compiled and linked stati
 After checking out the project run the following commands:
 
 ```bash
-cd ./binding/ReactNative.iOS
-
+# inside of ./binding/ReactNative.iOS
 # install all node dependencies
 yarn install
 
-# build static react native library
-yarn build Debug # or Release respectively (case sensitive), default: Debug
+# build static react native library and the binding
+make build CONFIGURATION=Debug # or Release respectively (case sensitive), default: Debug
 ```
 
 #### 2. Either use the react packager
@@ -49,16 +48,18 @@ This will only work for debug builds. Run the following command and check that y
 If you deploy to a physical device make sure you update the url inside `SampleApp.iOS/AppDelegate.cs` with your local ip address, so that the device can reach the packager in your local network.
 
 ```bash
+# inside of ./binding
 # run react native packager
 yarn start
 ```
 
 #### 2. Or use the embeddable javascript bundle
-This is recommended for release builds. You will need to update the javascript source inside `samples/SampleApp.iOS/AppDelegate.cs` to the bundled asset.
+This is recommended for release builds. You will need to update the javascript source inside `samples/SampleApp.iOS/AppDelegate.cs` or `samples/SampleApp.Forms/Mainpage.xaml` to the bundled asset.
 
 ```bash
+# inside of ./binding
 # bundle javascript to embeddable main.jsbundle
-yarn bundle
+yarn bundle-ios
 ```
 
 #### 3. Firing it up
@@ -69,22 +70,22 @@ After you have done this, you can open the project `samples/SampleApp.sln` and d
 After checking out the project run the following commands:
 
 ```bash
-cd ./binding/ReactNative.Droid
-
+# inside of ./binding/ReactNative.Droid
 # install all node dependencies
 yarn install
+
+# build the android binding
+make build
 ```
 
 #### 2. Bundle the embeddable javascript
 This is recommended for release builds.
 
 ```bash
+# inside of ./binding/
 # bundle javascript to embeddable index.android
-yarn bundle
+yarn bundle-android
 ```
-
-#### 3. Firing it up
-After you have done this, you can open the project `samples/SampleApp.sln` and deploy it to a device or simulator.
 
 #### (OPTIONAL) 3.1. Use the react packager
 Using the react packager is only possible once the app already started and loaded it's bundle from `Assets/`. See *Known Issues*.
@@ -92,11 +93,15 @@ Using the react packager is only possible once the app already started and loade
 This will only work for debug builds. Run the following command and check that your javascript bundle is available on `http://localhost:8081/index.bundle`
 
 ```bash
+# inside of ./binding
 # run react native packager
 yarn start
 ```
 
 Open the react dev support menu and `Refresh` the view or `Enable hot reloading` to check if everything works.
+
+#### 3. Firing it up
+After you have done this, you can open the project `samples/SampleApp.sln` and deploy it to a device or simulator.
 
 ## Known Issues
 * The precompiled `ReactNative.Droid` assembly references the `Square.Okio` package. This will cause build errors in the DEXer build step if you are using `modernhttpclient`. This is because `modernhttpclient` ships with its own prebundled version of `okhttp`.

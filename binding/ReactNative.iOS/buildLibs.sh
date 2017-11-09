@@ -4,7 +4,7 @@ CONFIGURATION=${1:-${CONFIGURATION:-Debug}}
 
 function buildLib {
   # prepare project params
-  BASE="$DIR/node_modules/react-native"
+  BASE="$DIR/../node_modules/react-native"
   PROJECT="$BASE/$1"
 
   if [[ -n $4 ]]; then

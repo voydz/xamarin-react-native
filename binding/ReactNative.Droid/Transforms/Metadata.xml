@@ -96,6 +96,16 @@
 			<parameter name="extraData" type="java.lang.Object" />
 		</method>
 	</add-node>
+	<!-- ReactVirtualTextViewManager -->
+	<attr path="/api/package[@name='com.facebook.react.views.text']/class[@name='ReactVirtualTextViewManager']/method[@name='createViewInstance' and count(parameter)=1 and parameter[1][@type='com.facebook.react.uimanager.ThemedReactContext']]" name="managedReturn">Java.Lang.Object</attr>
+	<attr path="/api/package[@name='com.facebook.react.views.text']/class[@name='ReactVirtualTextViewManager']/method[@name='createViewInstance' and count(parameter)=1 and parameter[1][@type='com.facebook.react.uimanager.ThemedReactContext']]" name="visibility">protected</attr>
+	<remove-node path="/api/package[@name='com.facebook.react.views.text']/class[@name='ReactVirtualTextViewManager']/method[@name='updateExtraData' and count(parameter)=2 and parameter[1][@type='android.view.View'] and parameter[2][@type='java.lang.Object']]" />
+	<add-node path="/api/package[@name='com.facebook.react.views.text']/class[@name='ReactVirtualTextViewManager']">
+		<method abstract="false" deprecated="not deprecated" final="false" name="updateExtraData" native="false" return="void" static="false" synchronized="false" visibility="public">
+			<parameter name="root" type="java.lang.Object" />
+			<parameter name="extraData" type="java.lang.Object" />
+		</method>
+	</add-node>
 	<!-- ReactTextViewManager -->
 	<attr path="/api/package[@name='com.facebook.react.views.text']/class[@name='ReactTextViewManager']/method[@name='createViewInstance' and count(parameter)=1 and parameter[1][@type='com.facebook.react.uimanager.ThemedReactContext']]" name="managedReturn">Java.Lang.Object</attr>
 	<attr path="/api/package[@name='com.facebook.react.views.text']/class[@name='ReactTextViewManager']/method[@name='createViewInstance' and count(parameter)=1 and parameter[1][@type='com.facebook.react.uimanager.ThemedReactContext']]" name="visibility">protected</attr>
@@ -144,6 +154,34 @@
 			<parameter name="extraData" type="java.lang.Object" />
 		</method>
 	</add-node>
+	<!-- RCTVirtualText -->
+	<remove-node path="/api/package[@name='com.facebook.react.flat']/class[@name='RCTVirtualText']/method[@name='addChildAt' and count(parameter)=2 and parameter[1][@type='com.facebook.react.uimanager.ReactShadowNode'] and parameter[2][@type='int']]" />
+	<add-node path="/api/package[@name='com.facebook.react.flat']/class[@name='RCTVirtualText']">
+		<method abstract="false" deprecated="not deprecated" final="false" name="addChildAt" native="false" return="void" static="false" synchronized="false" visibility="public">
+			<parameter name="p0" type="java.lang.Object" />
+			<parameter name="p1" type="int" />
+		</method>
+	</add-node>
+	<!-- ReactShadowNodeImpl -->
+	<attr path="/api/package[@name='com.facebook.react.uimanager']/class[@name='ReactShadowNodeImpl']/method[@name='getNativeParent' and count(parameter)=0]" name="managedReturn">Java.Lang.Object</attr>
+	<attr path="/api/package[@name='com.facebook.react.uimanager']/class[@name='ReactShadowNodeImpl']/method[@name='getParent' and count(parameter)=0]" name="managedReturn">Java.Lang.Object</attr>
+	<attr path="/api/package[@name='com.facebook.react.uimanager']/class[@name='ReactShadowNodeImpl']/method[@name='getRootNode' and count(parameter)=0]" name="managedReturn">Java.Lang.Object</attr>
+	<remove-node path="/api/package[@name='com.facebook.react.uimanager']/class[@name='ReactShadowNodeImpl']/method[@name='setRootNode' and count(parameter)=1 and parameter[1][@type='com.facebook.react.uimanager.ReactShadowNodeImpl']]" />
+	<add-node path="/api/package[@name='com.facebook.react.uimanager']/class[@name='ReactShadowNodeImpl']">
+		<method abstract="false" deprecated="not deprecated" final="true" name="setRootNode" native="false" return="void" static="false" synchronized="false" visibility="public">
+			<parameter name="rootNode" type="java.lang.Object" />
+		</method>
+	</add-node>
+	<!-- ReactRawTextManager -->
+	<attr path="/api/package[@name='com.facebook.react.views.text']/class[@name='ReactRawTextManager']/method[@name='createViewInstance' and count(parameter)=1 and parameter[1][@type='com.facebook.react.uimanager.ThemedReactContext']]" name="managedReturn">Java.Lang.Object</attr>
+	<attr path="/api/package[@name='com.facebook.react.views.text']/class[@name='ReactRawTextManager']/method[@name='createViewInstance' and count(parameter)=1 and parameter[1][@type='com.facebook.react.uimanager.ThemedReactContext']]" name="visibility">protected</attr>
+	<remove-node path="/api/package[@name='com.facebook.react.views.text']/class[@name='ReactRawTextManager']/method[@name='updateExtraData' and count(parameter)=2 and parameter[1][@type='android.view.View'] and parameter[2][@type='java.lang.Object']]" />
+	<add-node path="/api/package[@name='com.facebook.react.views.text']/class[@name='ReactRawTextManager']">
+		<method abstract="false" deprecated="not deprecated" final="false" name="updateExtraData" native="false" return="void" static="false" synchronized="false" visibility="public">
+			<parameter name="root" type="java.lang.Object" />
+			<parameter name="extraData" type="java.lang.Object" />
+		</method>
+	</add-node>
 	<!-- RCTRawTextManager -->
 	<remove-node path="/api/package[@name='com.facebook.react.flat']/class[@name='RCTRawTextManager']/method[@name='updateExtraData' and count(parameter)=2 and parameter[1][@type='android.view.View'] and parameter[2][@type='java.lang.Object']]" />
 	<add-node path="/api/package[@name='com.facebook.react.flat']/class[@name='RCTRawTextManager']">
@@ -186,6 +224,9 @@
 	<!-- ReactHorizontalScrollViewManager -->
 	<attr path="/api/package[@name='com.facebook.react.views.scroll']/class[@name='ReactHorizontalScrollViewManager']/method[@name='createViewInstance' and count(parameter)=1 and parameter[1][@type='com.facebook.react.uimanager.ThemedReactContext']]" name="managedReturn">Java.Lang.Object</attr>
 	<attr path="/api/package[@name='com.facebook.react.views.scroll']/class[@name='ReactHorizontalScrollViewManager']/method[@name='createViewInstance' and count(parameter)=1 and parameter[1][@type='com.facebook.react.uimanager.ThemedReactContext']]" name="visibility">protected</attr>
+	<!-- ReactHorizontalScrollContainerViewManager -->
+	<attr path="/api/package[@name='com.facebook.react.views.scroll']/class[@name='ReactHorizontalScrollContainerViewManager']/method[@name='createViewInstance' and count(parameter)=1 and parameter[1][@type='com.facebook.react.uimanager.ThemedReactContext']]" name="managedReturn">Java.Lang.Object</attr>
+	<attr path="/api/package[@name='com.facebook.react.views.scroll']/class[@name='ReactHorizontalScrollContainerViewManager']/method[@name='createViewInstance' and count(parameter)=1 and parameter[1][@type='com.facebook.react.uimanager.ThemedReactContext']]" name="visibility">protected</attr>
 	<!-- ReactSliderManager -->
 	<attr path="/api/package[@name='com.facebook.react.views.slider']/class[@name='ReactSliderManager']/method[@name='createViewInstance' and count(parameter)=1 and parameter[1][@type='com.facebook.react.uimanager.ThemedReactContext']]" name="managedReturn">Java.Lang.Object</attr>
 </metadata>

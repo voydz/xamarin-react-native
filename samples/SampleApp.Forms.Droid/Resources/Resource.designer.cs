@@ -63,40 +63,52 @@ namespace SampleApp.Forms.Droid
 			public const int abc_slide_out_top = 2130968585;
 			
 			// aapt resource value: 0x7f04000a
-			public const int catalyst_push_up_in = 2130968586;
+			public const int catalyst_fade_in = 2130968586;
 			
 			// aapt resource value: 0x7f04000b
-			public const int catalyst_push_up_out = 2130968587;
+			public const int catalyst_fade_out = 2130968587;
 			
 			// aapt resource value: 0x7f04000c
-			public const int design_bottom_sheet_slide_in = 2130968588;
+			public const int catalyst_push_up_in = 2130968588;
 			
 			// aapt resource value: 0x7f04000d
-			public const int design_bottom_sheet_slide_out = 2130968589;
+			public const int catalyst_push_up_out = 2130968589;
 			
 			// aapt resource value: 0x7f04000e
-			public const int design_fab_in = 2130968590;
+			public const int catalyst_slide_down = 2130968590;
 			
 			// aapt resource value: 0x7f04000f
-			public const int design_fab_out = 2130968591;
+			public const int catalyst_slide_up = 2130968591;
 			
 			// aapt resource value: 0x7f040010
-			public const int design_snackbar_in = 2130968592;
+			public const int design_bottom_sheet_slide_in = 2130968592;
 			
 			// aapt resource value: 0x7f040011
-			public const int design_snackbar_out = 2130968593;
+			public const int design_bottom_sheet_slide_out = 2130968593;
 			
 			// aapt resource value: 0x7f040012
-			public const int fade_in = 2130968594;
+			public const int design_fab_in = 2130968594;
 			
 			// aapt resource value: 0x7f040013
-			public const int fade_out = 2130968595;
+			public const int design_fab_out = 2130968595;
 			
 			// aapt resource value: 0x7f040014
-			public const int slide_down = 2130968596;
+			public const int design_snackbar_in = 2130968596;
 			
 			// aapt resource value: 0x7f040015
-			public const int slide_up = 2130968597;
+			public const int design_snackbar_out = 2130968597;
+			
+			// aapt resource value: 0x7f040016
+			public const int fade_in = 2130968598;
+			
+			// aapt resource value: 0x7f040017
+			public const int fade_out = 2130968599;
+			
+			// aapt resource value: 0x7f040018
+			public const int slide_down = 2130968600;
+			
+			// aapt resource value: 0x7f040019
+			public const int slide_up = 2130968601;
 			
 			static Animation()
 			{
@@ -3986,8 +3998,8 @@ namespace SampleApp.Forms.Droid
 			// aapt resource value: 0x7f0c0170
 			public const int Animation_Design_BottomSheetDialog = 2131493232;
 			
-			// aapt resource value: 0x7f0c019a
-			public const int AppCompatDialogStyle = 2131493274;
+			// aapt resource value: 0x7f0c019e
+			public const int AppCompatDialogStyle = 2131493278;
 			
 			// aapt resource value: 0x7f0c00b2
 			public const int Base_AlertDialog_AppCompat = 2131493042;
@@ -4470,16 +4482,22 @@ namespace SampleApp.Forms.Droid
 			public const int CardView_Light = 2131492878;
 			
 			// aapt resource value: 0x7f0c018c
-			public const int DialogAnimationFade = 2131493260;
+			public const int ClockTimePickerDialog = 2131493260;
 			
 			// aapt resource value: 0x7f0c018d
-			public const int DialogAnimationSlide = 2131493261;
+			public const int ClockTimePickerStyle = 2131493261;
 			
-			// aapt resource value: 0x7f0c0198
-			public const int MyTheme = 2131493272;
+			// aapt resource value: 0x7f0c018e
+			public const int DialogAnimationFade = 2131493262;
 			
-			// aapt resource value: 0x7f0c0199
-			public const int MyTheme_Base = 2131493273;
+			// aapt resource value: 0x7f0c018f
+			public const int DialogAnimationSlide = 2131493263;
+			
+			// aapt resource value: 0x7f0c019c
+			public const int MyTheme = 2131493276;
+			
+			// aapt resource value: 0x7f0c019d
+			public const int MyTheme_Base = 2131493277;
 			
 			// aapt resource value: 0x7f0c002d
 			public const int Platform_AppCompat = 2131492909;
@@ -4565,11 +4583,17 @@ namespace SampleApp.Forms.Droid
 			// aapt resource value: 0x7f0c004d
 			public const int RtlUnderlay_Widget_AppCompat_ActionButton_Overflow = 2131492941;
 			
-			// aapt resource value: 0x7f0c018e
-			public const int SpinnerDatePickerDialog = 2131493262;
+			// aapt resource value: 0x7f0c0190
+			public const int SpinnerDatePickerDialog = 2131493264;
 			
-			// aapt resource value: 0x7f0c018f
-			public const int SpinnerDatePickerStyle = 2131493263;
+			// aapt resource value: 0x7f0c0191
+			public const int SpinnerDatePickerStyle = 2131493265;
+			
+			// aapt resource value: 0x7f0c0192
+			public const int SpinnerTimePickerDialog = 2131493266;
+			
+			// aapt resource value: 0x7f0c0193
+			public const int SpinnerTimePickerStyle = 2131493267;
 			
 			// aapt resource value: 0x7f0c00dd
 			public const int TextAppearance_AppCompat = 2131493085;
@@ -4796,8 +4820,8 @@ namespace SampleApp.Forms.Droid
 			// aapt resource value: 0x7f0c0110
 			public const int TextAppearance_Widget_AppCompat_Toolbar_Title = 2131493136;
 			
-			// aapt resource value: 0x7f0c0190
-			public const int Theme = 2131493264;
+			// aapt resource value: 0x7f0c0194
+			public const int Theme = 2131493268;
 			
 			// aapt resource value: 0x7f0c0111
 			public const int Theme_AppCompat = 2131493137;
@@ -4862,11 +4886,11 @@ namespace SampleApp.Forms.Droid
 			// aapt resource value: 0x7f0c011e
 			public const int Theme_AppCompat_NoActionBar = 2131493150;
 			
-			// aapt resource value: 0x7f0c0191
-			public const int Theme_Catalyst = 2131493265;
+			// aapt resource value: 0x7f0c0195
+			public const int Theme_Catalyst = 2131493269;
 			
-			// aapt resource value: 0x7f0c0192
-			public const int Theme_Catalyst_RedBox = 2131493266;
+			// aapt resource value: 0x7f0c0196
+			public const int Theme_Catalyst_RedBox = 2131493270;
 			
 			// aapt resource value: 0x7f0c017a
 			public const int Theme_Design = 2131493242;
@@ -4886,14 +4910,14 @@ namespace SampleApp.Forms.Droid
 			// aapt resource value: 0x7f0c017f
 			public const int Theme_Design_NoActionBar = 2131493247;
 			
-			// aapt resource value: 0x7f0c0193
-			public const int Theme_FullScreenDialog = 2131493267;
+			// aapt resource value: 0x7f0c0197
+			public const int Theme_FullScreenDialog = 2131493271;
 			
-			// aapt resource value: 0x7f0c0194
-			public const int Theme_FullScreenDialogAnimatedFade = 2131493268;
+			// aapt resource value: 0x7f0c0198
+			public const int Theme_FullScreenDialogAnimatedFade = 2131493272;
 			
-			// aapt resource value: 0x7f0c0195
-			public const int Theme_FullScreenDialogAnimatedSlide = 2131493269;
+			// aapt resource value: 0x7f0c0199
+			public const int Theme_FullScreenDialogAnimatedSlide = 2131493273;
 			
 			// aapt resource value: 0x7f0c0003
 			public const int Theme_MediaRouter = 2131492867;
@@ -4907,11 +4931,11 @@ namespace SampleApp.Forms.Droid
 			// aapt resource value: 0x7f0c0006
 			public const int Theme_MediaRouter_LightControlPanel = 2131492870;
 			
-			// aapt resource value: 0x7f0c0196
-			public const int Theme_ReactNative_AppCompat_Light = 2131493270;
+			// aapt resource value: 0x7f0c019a
+			public const int Theme_ReactNative_AppCompat_Light = 2131493274;
 			
-			// aapt resource value: 0x7f0c0197
-			public const int Theme_ReactNative_AppCompat_Light_NoActionBar_FullScreen = 2131493271;
+			// aapt resource value: 0x7f0c019b
+			public const int Theme_ReactNative_AppCompat_Light_NoActionBar_FullScreen = 2131493275;
 			
 			// aapt resource value: 0x7f0c011f
 			public const int ThemeOverlay_AppCompat = 2131493151;

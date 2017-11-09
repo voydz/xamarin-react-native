@@ -1,0 +1,18 @@
+{
+  "name": "xamarin-react-native",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "bundle-android": "yarn bundle-sample-android && yarn bundle-sample-forms-android",
+    "bundle-sample-android": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output ../samples/SampleApp.Droid/Assets/index.android.bundle --assets-dest ../samples/SampleApp.Droid/Resources/",
+    "bundle-sample-forms-android": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output ../samples/SampleApp.Forms.Droid/Assets/index.android.bundle --assets-dest ../samples/SampleApp.Forms.Droid/Resources/",
+    "bundle-ios": "yarn bundle-sample-ios && yarn bundle-sample-forms-ios",
+    "bundle-sample-ios": "react-native bundle --platform ios --dev false --entry-file index.js --bundle-output ../samples/SampleApp.iOS/Resources/main.jsbundle --assets-dest ../samples/SampleApp.iOS/Resources/",
+    "bundle-sample-forms-ios": "react-native bundle --platform ios --dev false --entry-file index.js --bundle-output ../samples/SampleApp.Forms.iOS/Resources/main.jsbundle --assets-dest ../samples/SampleApp.Forms.iOS/Resources/"
+  },
+  "dependencies": {
+    "react": "16.0.0",
+    "react-native": "^0.50.3"
+  }
+}
