@@ -2,19 +2,19 @@
 <package>
   <metadata>
     <id>ReactNative.Forms.Droid</id>
-    <version>1.0.2</version>
+    <version>1.0.50</version>
     <authors>voydz</authors>
     <owners>voydz</owners>
     <iconUrl>https://reactjs.org/favicon.ico</iconUrl>
     <projectUrl>https://github.com/voydz/xamarin-react-native</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Use ReactNative.iOS inside of Xamarin.Forms.</description>
+    <description>Use ReactNative.Droid inside of Xamarin.Forms.</description>
     <releaseNotes>Initial release.</releaseNotes>
     <copyright>Copyright 2017</copyright>
     <tags>react react-native com.facebook.react facebook</tags>
     <dependencies>
-      <dependency id="ReactNative.Forms" version="1.0.0" />
-      <dependency id="ReactNative.Droid" version="1.0.0" />
+      <dependency id="ReactNative.Forms" version="1.0.50" />
+      <dependency id="ReactNative.Droid" version="1.0.50" />
     </dependencies>
   </metadata>
   <files>

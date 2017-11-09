@@ -13,11 +13,7 @@ namespace ReactNative.Forms.iOS.Renderers
 {
     public class ReactViewRenderer : ViewRenderer<ReactView, RCTRootView>
     {
-        private RCTRootView _reactView;
-
-        public static void Init()
-        {
-        }
+        private RCTRootView _rootView;
 
         #region renderer
 
@@ -27,8 +23,8 @@ namespace ReactNative.Forms.iOS.Renderers
 
             if (Control == null)
             {
-                _reactView = CreateReactView();
-                SetNativeControl(_reactView);
+                _rootView = CreateReactView();
+                SetNativeControl(_rootView);
             }
         }
 
@@ -36,9 +32,18 @@ namespace ReactNative.Forms.iOS.Renderers
         {
             base.OnElementPropertyChanged(sender, e);
 
-            // We have to force recreate the whole view.
-            _reactView = CreateReactView();
-            SetNativeControl(_reactView);
+            switch (e.PropertyName)
+            {
+                case nameof(ReactView.PackagerUrl):
+                case nameof(ReactView.BundleName):
+                case nameof(ReactView.ModulePath):
+                case nameof(ReactView.ModuleName):
+                case nameof(ReactView.Properties):
+                    // We have to force recreate the whole view.
+                    _rootView = CreateReactView();
+                    SetNativeControl(_rootView);
+                    break;
+            }
         }
 
         private RCTRootView CreateReactView()

@@ -14,7 +14,8 @@ namespace SampleApp.Forms.iOS
         {
             global::Xamarin.Forms.Forms.Init();
 
-            ReactNative.Forms.iOS.Renderers.ReactViewRenderer.Init();
+            // Prevent library from beeing unlinked.
+            var temp = new ReactNative.Forms.iOS.Renderers.ReactViewRenderer();
 
             LoadApplication(new App());
 
