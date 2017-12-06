@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>ReactNative.Forms.iOS</id>
-    <version>1.0.50</version>
+    <version>1.0.51</version>
     <authors>voydz</authors>
     <owners>voydz</owners>
     <iconUrl>https://reactjs.org/favicon.ico</iconUrl>
@@ -13,8 +13,8 @@
     <copyright>Copyright 2017</copyright>
     <tags>react react-native com.facebook.react facebook</tags>
     <dependencies>
-      <dependency id="ReactNative.Forms" version="1.0.50" />
-      <dependency id="ReactNative.iOS" version="1.0.50" />
+      <dependency id="ReactNative.Forms" version="1.0.51" />
+      <dependency id="ReactNative.iOS" version="1.0.51" />
     </dependencies>
   </metadata>
   <files>

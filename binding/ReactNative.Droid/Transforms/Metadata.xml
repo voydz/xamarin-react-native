@@ -43,12 +43,7 @@
 	<!-- ReadableNativeMap -->
 	<attr path="/api/package[@name='com.facebook.react.bridge']/class[@name='ReadableNativeMap']/method[@name='getMap' and count(parameter)=1 and parameter[1][@type='java.lang.String']]" name="managedReturn">Com.Facebook.React.Bridge.IReadableMap</attr>
 	<attr path="/api/package[@name='com.facebook.react.bridge']/class[@name='ReadableNativeMap']/method[@name='getArray' and count(parameter)=1 and parameter[1][@type='java.lang.String']]" name="managedReturn">Com.Facebook.React.Bridge.IReadableArray</attr>
-	<!-- WritableNativeArray -->
-	<attr path="/api/package[@name='com.facebook.react.bridge']/class[@name='WritableNativeArray']/method[@name='getMap' and count(parameter)=1 and parameter[1][@type='int']]" name="managedReturn">Com.Facebook.React.Bridge.IReadableMap</attr>
-	<attr path="/api/package[@name='com.facebook.react.bridge']/class[@name='WritableNativeArray']/method[@name='getArray' and count(parameter)=1 and parameter[1][@type='int']]" name="managedReturn">Com.Facebook.React.Bridge.IReadableArray</attr>
-	<!-- WritableNativeMap -->
-	<attr path="/api/package[@name='com.facebook.react.bridge']/class[@name='WritableNativeMap']/method[@name='getMap' and count(parameter)=1 and parameter[1][@type='java.lang.String']]" name="managedReturn">Com.Facebook.React.Bridge.IReadableMap</attr>
-	<attr path="/api/package[@name='com.facebook.react.bridge']/class[@name='WritableNativeMap']/method[@name='getArray' and count(parameter)=1 and parameter[1][@type='java.lang.String']]" name="managedReturn">Com.Facebook.React.Bridge.IReadableArray</attr>
+
 	<!-- AnmationDriver -->
 	<attr path="/api/package[@name='com.facebook.react.animated']/class[@name='AnimationDriver']" name="visibility">public</attr>
 	<!-- VirtualViewManager -->
