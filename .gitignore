@@ -4,3 +4,4 @@
 packages
 libReactNative.a
 *.userprefs
+.vscode

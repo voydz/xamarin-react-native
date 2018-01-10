@@ -98,18 +98,6 @@ namespace SampleApp.Forms.Droid
 			// aapt resource value: 0x7f040015
 			public const int design_snackbar_out = 2130968597;
 			
-			// aapt resource value: 0x7f040016
-			public const int fade_in = 2130968598;
-			
-			// aapt resource value: 0x7f040017
-			public const int fade_out = 2130968599;
-			
-			// aapt resource value: 0x7f040018
-			public const int slide_down = 2130968600;
-			
-			// aapt resource value: 0x7f040019
-			public const int slide_up = 2130968601;
-			
 			static Animation()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
@@ -3821,64 +3809,70 @@ namespace SampleApp.Forms.Droid
 			public const int catalyst_debugjs = 2131361855;
 			
 			// aapt resource value: 0x7f0a0040
-			public const int catalyst_debugjs_off = 2131361856;
+			public const int catalyst_debugjs_nuclide = 2131361856;
 			
 			// aapt resource value: 0x7f0a0041
-			public const int catalyst_dismiss_button = 2131361857;
+			public const int catalyst_debugjs_nuclide_failure = 2131361857;
 			
 			// aapt resource value: 0x7f0a0042
-			public const int catalyst_element_inspector = 2131361858;
+			public const int catalyst_debugjs_off = 2131361858;
 			
 			// aapt resource value: 0x7f0a0043
-			public const int catalyst_heap_capture = 2131361859;
+			public const int catalyst_dismiss_button = 2131361859;
 			
 			// aapt resource value: 0x7f0a0044
-			public const int catalyst_hot_module_replacement = 2131361860;
+			public const int catalyst_element_inspector = 2131361860;
 			
 			// aapt resource value: 0x7f0a0045
-			public const int catalyst_hot_module_replacement_off = 2131361861;
+			public const int catalyst_heap_capture = 2131361861;
 			
 			// aapt resource value: 0x7f0a0046
-			public const int catalyst_jsload_error = 2131361862;
+			public const int catalyst_hot_module_replacement = 2131361862;
 			
 			// aapt resource value: 0x7f0a0047
-			public const int catalyst_live_reload = 2131361863;
+			public const int catalyst_hot_module_replacement_off = 2131361863;
 			
 			// aapt resource value: 0x7f0a0048
-			public const int catalyst_live_reload_off = 2131361864;
+			public const int catalyst_jsload_error = 2131361864;
 			
 			// aapt resource value: 0x7f0a0049
-			public const int catalyst_loading_from_url = 2131361865;
+			public const int catalyst_live_reload = 2131361865;
 			
 			// aapt resource value: 0x7f0a004a
-			public const int catalyst_perf_monitor = 2131361866;
+			public const int catalyst_live_reload_off = 2131361866;
 			
 			// aapt resource value: 0x7f0a004b
-			public const int catalyst_perf_monitor_off = 2131361867;
+			public const int catalyst_loading_from_url = 2131361867;
 			
 			// aapt resource value: 0x7f0a004c
-			public const int catalyst_poke_sampling_profiler = 2131361868;
+			public const int catalyst_perf_monitor = 2131361868;
 			
 			// aapt resource value: 0x7f0a004d
-			public const int catalyst_reload_button = 2131361869;
+			public const int catalyst_perf_monitor_off = 2131361869;
 			
 			// aapt resource value: 0x7f0a004e
-			public const int catalyst_reloadjs = 2131361870;
+			public const int catalyst_poke_sampling_profiler = 2131361870;
 			
 			// aapt resource value: 0x7f0a004f
-			public const int catalyst_remotedbg_error = 2131361871;
+			public const int catalyst_reload_button = 2131361871;
 			
 			// aapt resource value: 0x7f0a0050
-			public const int catalyst_remotedbg_message = 2131361872;
+			public const int catalyst_reloadjs = 2131361872;
 			
 			// aapt resource value: 0x7f0a0051
-			public const int catalyst_report_button = 2131361873;
+			public const int catalyst_remotedbg_error = 2131361873;
 			
 			// aapt resource value: 0x7f0a0052
-			public const int catalyst_settings = 2131361874;
+			public const int catalyst_remotedbg_message = 2131361874;
 			
 			// aapt resource value: 0x7f0a0053
-			public const int catalyst_settings_title = 2131361875;
+			public const int catalyst_report_button = 2131361875;
+			
+			// aapt resource value: 0x7f0a0054
+			public const int catalyst_settings = 2131361876;
+			
+			// aapt resource value: 0x7f0a0055
+			public const int catalyst_settings_title = 2131361877;
 			
 			// aapt resource value: 0x7f0a0038
 			public const int character_counter_pattern = 2131361848;

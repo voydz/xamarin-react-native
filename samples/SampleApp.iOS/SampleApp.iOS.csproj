@@ -72,6 +72,9 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.iOS" />
+    <Reference Include="ReactNative.iOS">
+      <HintPath>..\..\binding\ReactNative.iOS\bin\Debug\ReactNative.iOS.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Contents.json" />
@@ -90,11 +93,5 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <BundleResource Include="Resources\main.jsbundle" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\binding\ReactNative.iOS\ReactNative.iOS.csproj">
-      <Project>{05FF3726-ED02-4814-AF63-9BA10085090E}</Project>
-      <Name>ReactNative.iOS</Name>
-    </ProjectReference>
   </ItemGroup>
 </Project>

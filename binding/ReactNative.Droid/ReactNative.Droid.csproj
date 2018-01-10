@@ -61,8 +61,8 @@
     <TransformFile Include="Transforms\Metadata.xml" />
   </ItemGroup>
   <ItemGroup>
-    <LibraryProjectZip Include="..\node_modules\react-native\android\com\facebook\react\react-native\0.51.0\react-native-0.51.0.aar">
-      <Link>Jars\react-native-0.51.0.aar</Link>
+    <LibraryProjectZip Include="..\node_modules\react-native\android\com\facebook\react\react-native\0.52.0\react-native-0.52.0.aar">
+      <Link>Jars\react-native-0.52.0.aar</Link>
     </LibraryProjectZip>
     <LibraryProjectZip Include="Jars\android-jsc-r174650.aar" />
   </ItemGroup>

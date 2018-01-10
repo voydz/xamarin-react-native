@@ -2546,8 +2546,8 @@ namespace SampleApp.Droid
 			// aapt resource value: 0x7f070012
 			public const int abc_toolbar_collapse_description = 2131165202;
 			
-			// aapt resource value: 0x7f070037
-			public const int app_name = 2131165239;
+			// aapt resource value: 0x7f070039
+			public const int app_name = 2131165241;
 			
 			// aapt resource value: 0x7f070021
 			public const int catalyst_copy_button = 2131165217;
@@ -2556,64 +2556,70 @@ namespace SampleApp.Droid
 			public const int catalyst_debugjs = 2131165218;
 			
 			// aapt resource value: 0x7f070023
-			public const int catalyst_debugjs_off = 2131165219;
+			public const int catalyst_debugjs_nuclide = 2131165219;
 			
 			// aapt resource value: 0x7f070024
-			public const int catalyst_dismiss_button = 2131165220;
+			public const int catalyst_debugjs_nuclide_failure = 2131165220;
 			
 			// aapt resource value: 0x7f070025
-			public const int catalyst_element_inspector = 2131165221;
+			public const int catalyst_debugjs_off = 2131165221;
 			
 			// aapt resource value: 0x7f070026
-			public const int catalyst_heap_capture = 2131165222;
+			public const int catalyst_dismiss_button = 2131165222;
 			
 			// aapt resource value: 0x7f070027
-			public const int catalyst_hot_module_replacement = 2131165223;
+			public const int catalyst_element_inspector = 2131165223;
 			
 			// aapt resource value: 0x7f070028
-			public const int catalyst_hot_module_replacement_off = 2131165224;
+			public const int catalyst_heap_capture = 2131165224;
 			
 			// aapt resource value: 0x7f070029
-			public const int catalyst_jsload_error = 2131165225;
+			public const int catalyst_hot_module_replacement = 2131165225;
 			
 			// aapt resource value: 0x7f07002a
-			public const int catalyst_live_reload = 2131165226;
+			public const int catalyst_hot_module_replacement_off = 2131165226;
 			
 			// aapt resource value: 0x7f07002b
-			public const int catalyst_live_reload_off = 2131165227;
+			public const int catalyst_jsload_error = 2131165227;
 			
 			// aapt resource value: 0x7f07002c
-			public const int catalyst_loading_from_url = 2131165228;
+			public const int catalyst_live_reload = 2131165228;
 			
 			// aapt resource value: 0x7f07002d
-			public const int catalyst_perf_monitor = 2131165229;
+			public const int catalyst_live_reload_off = 2131165229;
 			
 			// aapt resource value: 0x7f07002e
-			public const int catalyst_perf_monitor_off = 2131165230;
+			public const int catalyst_loading_from_url = 2131165230;
 			
 			// aapt resource value: 0x7f07002f
-			public const int catalyst_poke_sampling_profiler = 2131165231;
+			public const int catalyst_perf_monitor = 2131165231;
 			
 			// aapt resource value: 0x7f070030
-			public const int catalyst_reload_button = 2131165232;
+			public const int catalyst_perf_monitor_off = 2131165232;
 			
 			// aapt resource value: 0x7f070031
-			public const int catalyst_reloadjs = 2131165233;
+			public const int catalyst_poke_sampling_profiler = 2131165233;
 			
 			// aapt resource value: 0x7f070032
-			public const int catalyst_remotedbg_error = 2131165234;
+			public const int catalyst_reload_button = 2131165234;
 			
 			// aapt resource value: 0x7f070033
-			public const int catalyst_remotedbg_message = 2131165235;
+			public const int catalyst_reloadjs = 2131165235;
 			
 			// aapt resource value: 0x7f070034
-			public const int catalyst_report_button = 2131165236;
+			public const int catalyst_remotedbg_error = 2131165236;
 			
 			// aapt resource value: 0x7f070035
-			public const int catalyst_settings = 2131165237;
+			public const int catalyst_remotedbg_message = 2131165237;
 			
 			// aapt resource value: 0x7f070036
-			public const int catalyst_settings_title = 2131165238;
+			public const int catalyst_report_button = 2131165238;
+			
+			// aapt resource value: 0x7f070037
+			public const int catalyst_settings = 2131165239;
+			
+			// aapt resource value: 0x7f070038
+			public const int catalyst_settings_title = 2131165240;
 			
 			// aapt resource value: 0x7f070013
 			public const int search_menu_title = 2131165203;
