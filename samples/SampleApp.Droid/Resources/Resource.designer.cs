@@ -3789,6 +3789,9 @@ namespace SampleApp.Droid
 			// aapt resource value: 0x7f09016a
 			public const int Widget_Compat_NotificationActionText = 2131296618;
 			
+			// aapt resource value: 0x7f09017f
+			public const int redboxButton = 2131296639;
+			
 			static Style()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();

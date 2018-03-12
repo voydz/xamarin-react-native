@@ -3992,8 +3992,8 @@ namespace SampleApp.Forms.Droid
 			// aapt resource value: 0x7f0c0170
 			public const int Animation_Design_BottomSheetDialog = 2131493232;
 			
-			// aapt resource value: 0x7f0c019e
-			public const int AppCompatDialogStyle = 2131493278;
+			// aapt resource value: 0x7f0c019f
+			public const int AppCompatDialogStyle = 2131493279;
 			
 			// aapt resource value: 0x7f0c00b2
 			public const int Base_AlertDialog_AppCompat = 2131493042;
@@ -4487,11 +4487,11 @@ namespace SampleApp.Forms.Droid
 			// aapt resource value: 0x7f0c018f
 			public const int DialogAnimationSlide = 2131493263;
 			
-			// aapt resource value: 0x7f0c019c
-			public const int MyTheme = 2131493276;
-			
 			// aapt resource value: 0x7f0c019d
-			public const int MyTheme_Base = 2131493277;
+			public const int MyTheme = 2131493277;
+			
+			// aapt resource value: 0x7f0c019e
+			public const int MyTheme_Base = 2131493278;
 			
 			// aapt resource value: 0x7f0c002d
 			public const int Platform_AppCompat = 2131492909;
@@ -5218,6 +5218,9 @@ namespace SampleApp.Forms.Droid
 			
 			// aapt resource value: 0x7f0c000a
 			public const int Widget_MediaRouter_MediaRouteButton = 2131492874;
+			
+			// aapt resource value: 0x7f0c019c
+			public const int redboxButton = 2131493276;
 			
 			static Style()
 			{
