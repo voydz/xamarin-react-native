@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>ReactNative.Forms</id>
-    <version>1.0.54</version>
+    <version>1.0.55</version>
     <authors>voydz</authors>
     <owners>voydz</owners>
     <iconUrl>https://reactjs.org/favicon.ico</iconUrl>
@@ -13,7 +13,7 @@
     <copyright>Copyright 2018</copyright>
     <tags>react react-native com.facebook.react facebook</tags>
     <dependencies>
-      <dependency id="Xamarin.Forms" version="2.5.0.122203" />
+      <dependency id="Xamarin.Forms" version="2.5.1.444934" />
     </dependencies>
   </metadata>
   <files>
