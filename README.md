@@ -1,4 +1,4 @@
-# Xamarin + react-native binding & sample project
+# Xamarin + react-native binding & sample project [![Build Status](https://www.bitrise.io/app/b3d5e7123fea85f8/status.svg?token=kL4Osd_HE45B1xGIH9wqVA&branch=master)](https://www.bitrise.io/app/b3d5e7123fea85f8)
 This project is inspired and based on https://github.com/cluxton/xamarin-react-native. Credits to him, for his good work! :+1:
 
 #### Whats in the box?
