@@ -29,6 +29,10 @@ There are a lot of react-native components which need [native linking](https://f
 #### 1. Getting your hands dirty
 To build the application you will first need to download React Native & build the static library for Xamarin to use.
 
+**DO THIS STUFF TO MAKE IT WORK**
+https://github.com/facebook/react-native/issues/21168#issuecomment-422431294
+https://github.com/facebook/react-native/pull/19579/commits/293915091ca6c9de2c54681e78eecf3229bc05d5?utf8=✓&diff=split&w=1
+
 It is crucial to understand, that since the library is compiled and linked statically you have to ship seperate `*.dlls` for release and debug. For example a release build of `libReactNative.a` won't contain the [DevSupport](https://facebook.github.io/react-native/docs/debugging.html) tools. See the commands below on how you can change the build configuration.
 
 After checking out the project run the following commands:

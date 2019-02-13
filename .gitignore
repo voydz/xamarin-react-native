@@ -5,3 +5,4 @@ packages
 libReactNative.a
 *.userprefs
 .vscode
+.DS_Store
