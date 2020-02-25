@@ -81,6 +81,11 @@ buildLib React React "$CONFIGURATION"
 buildLib Libraries/Text RCTText "$CONFIGURATION" React
 buildLib Libraries/Network RCTNetwork "$CONFIGURATION" React
 buildLib Libraries/WebSocket RCTWebSocket "$CONFIGURATION" React # needed for debugging
+buildLib Libraries/Image RCTImage "$CONFIGURATION" React
+buildLib Libraries/EventEmitter RCTEventEmitter "$CONFIGURATION" React
+buildLib Libraries/LinkingIOS RCTLinking "$CONFIGURATION" React
+buildLib Libraries/NativeAnimation RCTAnimation "$CONFIGURATION" React
+buildLib Libraries/ActionSheetIOS RCTActionSheet "$CONFIGURATION" React
 
 # link everything together
 ASSEMBLY="$DIR/bin/react/$CONFIGURATION/libReactNative.a"
@@ -89,7 +94,11 @@ libtool -static -o "$ASSEMBLY" \
   "$DIR/bin/react/$CONFIGURATION/libReact.a" \
   "$DIR/bin/react/$CONFIGURATION/libRCTText.a" \
   "$DIR/bin/react/$CONFIGURATION/libRCTNetwork.a" \
-  "$DIR/bin/react/$CONFIGURATION/libRCTWebSocket.a"
+  "$DIR/bin/react/$CONFIGURATION/libRCTWebSocket.a" \
+  "$DIR/bin/react/$CONFIGURATION/libRCTImage.a" \
+  "$DIR/bin/react/$CONFIGURATION/libRCTLinking.a" \
+  "$DIR/bin/react/$CONFIGURATION/libRCTAnimation.a" \
+  "$DIR/bin/react/$CONFIGURATION/libRCTActionSheet.a"
 
 # copy target assembly
 cp "$ASSEMBLY" "$DIR/libReactNative.a"

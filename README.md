@@ -24,10 +24,101 @@ To get startet just install the NuGet packages you need for your project. It dep
 ## A word about linking react-native components
 There are a lot of react-native components which need [native linking](https://facebook.github.io/react-native/docs/linking-libraries-ios.html). This binding already contains a precompiled and linked version of react-native. In theroy every component which need native linking should work if bound to C# seperatly. Make sure it is referencing this base react-native binding.
 
+You can also write your own native modules for [iOS](https://facebook.github.io/react-native/docs/native-modules-ios) or [Android](https://facebook.github.io/react-native/docs/native-modules-android) that can be called from javascript. See below for examples:
+
+#### iOS Native Module Example
+````c#
+using System;
+using Foundation;
+using System.Runtime.InteropServices;
+using ReactNative.iOS;
+using UIKit;
+
+namespace Example.iOS
+{
+    public class NativeModule : RCTBridgeModule
+    {
+        [Export("moduleName")]
+        public static string ModuleName() => "SomeName";
+
+        [Export("requiresMainQueueSetup")]
+        public static bool RequiresMainQueueSetup() => false;
+
+        [Export("Foo")]
+        public void Foo()
+        {
+            Console.Write("Hello Native World!")
+        }
+
+        [Export("__rct_export__Foo")]
+        public static IntPtr FooExport()
+        {
+            var temp = new RCTMethodInfo()
+            {
+                jsName = string.Empty,
+                objcName = "Foo",
+                isSync = false
+            };
+            var ptr = Marshal.AllocHGlobal(Marshal.SizeOf(temp));
+
+            Marshal.StructureToPtr(temp, ptr, false);
+
+            return ptr;
+        }
+    }
+}
+````
+
+#### Android Native Module Example
+````c#
+using System.Collections.Generic;
+using Android.Content;
+using Com.Facebook.React;
+using Com.Facebook.React.Bridge;
+using Com.Facebook.React.Uimanager;
+using Java.Interop;
+
+namespace Example.Droid
+{
+    public class NativePackage : Java.Lang.Object, IReactPackage
+    {   
+        public IList<INativeModule> CreateNativeModules(ReactApplicationContext context)
+        {
+            var module = new NativeModule(context);
+            var list = new List<INativeModule> { module };
+            return list;
+        }
+
+        public IList<ViewManager> CreateViewManagers(ReactApplicationContext context)
+        {
+            return new List<ViewManager> { };
+        }
+    }
+
+    public class NativeModule : ReactContextBaseJavaModule
+    {
+        public NativeModule(ReactApplicationContext reactContext) : base(reactContext) { }
+
+        public override string Name => "SomeName";
+
+        [Export]
+        [ReactMethod]
+        public void Foo()
+        {
+            Console.Write("Hello Native World")
+        }
+    }
+}
+````
+
 ## Build the samples and sources
 ### iOS
 #### 1. Getting your hands dirty
 To build the application you will first need to download React Native & build the static library for Xamarin to use.
+
+**DO THIS STUFF TO MAKE IT WORK**
+https://github.com/facebook/react-native/issues/21168#issuecomment-422431294
+https://github.com/facebook/react-native/pull/19579/commits/293915091ca6c9de2c54681e78eecf3229bc05d5?utf8=✓&diff=split&w=1
 
 It is crucial to understand, that since the library is compiled and linked statically you have to ship seperate `*.dlls` for release and debug. For example a release build of `libReactNative.a` won't contain the [DevSupport](https://facebook.github.io/react-native/docs/debugging.html) tools. See the commands below on how you can change the build configuration.
 
